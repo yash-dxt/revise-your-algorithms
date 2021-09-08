@@ -39,8 +39,8 @@ Node *postOrderInorderToTree(int in[], int po[], int l, int r)
         }
     }
 
-    curr->right = postOrderInorderToTree(in, po, l, x - 1);
-    curr->left = postOrderInorderToTree(in, po, x + 1, r);
+    curr->right = postOrderInorderToTree(in, po, x + 1, r);
+    curr->left = postOrderInorderToTree(in, po, l, x - 1);
 
     return curr;
 }
