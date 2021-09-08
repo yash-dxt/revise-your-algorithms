@@ -26,7 +26,7 @@ Node *postOrderInorderToTree(int in[], int po[], int l, int r)
 {
     if (l > r)
         return NULL;
-    int elem = po[currIndex++];
+    int elem = po[currIndex--];
     Node *curr = new Node(elem);
 
     int x;
