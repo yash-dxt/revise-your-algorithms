@@ -56,3 +56,30 @@ void levelOrderTraversalLineByLine(Node *root)
         cout << "\n";
     }
 }
+
+void levelOrderTraversalLineByLine(Node *root)
+{
+    queue<Node *> q;
+    q.push(root);
+    q.push(NULL);
+
+    while (q.size() > 1)
+    {
+
+        Node *curr = q.front();
+        q.pop();
+
+        if (curr == NULL)
+        {
+            cout << "\n";
+            q.push(NULL);
+            continue;
+        }
+
+        cout << curr->data << " ";
+        if (curr->left != NULL)
+            q.push(curr->left);
+        if (curr->right != NULL)
+            q.push(curr->right);
+    }
+}
